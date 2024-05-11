@@ -1,0 +1,66 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  background: #24429e;
+}
+
+#info {
+  position: absolute;
+  top: 20px; /* Adjust the top position */
+  right: 20px; /* Adjust the right position */
+  text-align: right;
+  background: #181c20;
+  color: #8c92a4;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 17px;
+  pointer-events: none;
+  font-family: var(--leva-fonts-mono);
+}
+
+.annotation {
+  font-size: 10px; /* Adjust the font size */
+  transform: translate3d(calc(50%), calc(-50%), 0);
+  text-align: left;
+  background: #181c20;
+  color: #8c92a4;
+  padding: 10px 15px;
+  border-radius: 5px;
+  user-select: none;
+  font-family: var(--leva-fonts-mono);
+}
+
+.annotation::before {
+  content: "";
+  position: absolute;
+  top: 50%; /* Adjust the top position */
+  left: -20px; /* Adjust the left position */
+  height: 2px;
+  width: 20px; /* Adjust the width */
+  background: #181c20;
+}
+/* Button container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Button */
+.app-button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 18px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.app-button:hover {
+  background-color: #45a049;
+}
