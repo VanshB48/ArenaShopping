@@ -4,7 +4,6 @@ import { useGLTF, OrbitControls, Environment, Html } from '@react-three/drei';
 import { useControls } from 'leva';
 import Models from './models.json';
 
-
 function Model({ url }) {
   const { scene } = useGLTF(url);
   const [cache, setCache] = useState({});
@@ -22,7 +21,6 @@ function Model({ url }) {
       }
     });
     
-
     console.log('Caching JSX for url ' + url);
     setCache({
       ...cache,
@@ -44,30 +42,51 @@ export default function Products() {
     window.location.href = 'http://localhost:3000';
   };
 
+  const handleStartAR = () => {
+    // Redirect to AR page
+    window.location.href = './Arena/ar/index.html';
+  };
+
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
       <button
-  style={{
-    padding: '10px 20px',
-    margin: '10px',
-    fontSize: '18px',
-    backgroundColor: '#4caf50',
-    color: 'white',
-    border: 'none',
-    borderRadius: '5px',
-    cursor: 'pointer',
-    transition: 'background-color 0.3s',
-  }}
-  onClick={handleBack}
->
-  Back
-</button>
-      <div style={{ width: '100%', height: '100%' }}>
+        style={{
+          padding: '10px 20px',
+          margin: '10px',
+          fontSize: '18px',
+          backgroundColor: '#4caf50',
+          color: 'white',
+          border: 'none',
+          borderRadius: '5px',
+          cursor: 'pointer',
+          transition: 'background-color 0.3s',
+        }}
+        onClick={handleBack}
+      >
+        Back
+      </button>
+      <button
+        style={{
+          padding: '10px 20px',
+          margin: '10px',
+          fontSize: '18px',
+          backgroundColor: '#f57c00',
+          color: 'white',
+          border: 'none',
+          borderRadius: '5px',
+          cursor: 'pointer',
+          transition: 'background-color 0.3s',
+        }}
+        onClick={handleStartAR}
+      >
+        Start AR
+      </button>
+      <div style={{ width: '100%', height: 'calc(100% - 60px)', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <Canvas
           style={{ width: '100%', height: '100%' }}
           camera={{ position: [0, 0, 5], fov: 50, near: 0.1, far: 1000 }}
         >
-          <Environment files="/img/workshop_1k.hdr" background />
+          <Environment files="img/industrial_sunset_puresky_4k.hdr" background />
           <group scale={[12, 12, 12]}>
             <Model url={Models[model]} />
           </group>

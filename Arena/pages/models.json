@@ -1,6 +1,23 @@
 {
     "hammer": "./models/hammer.glb",
-    "drill": "./models/drill.glb",
-    "tapeMeasure": "./models/tapeMeasure.glb"
+    "bean bag":"./models/bean_bag_color_grey.glb",
+    "bookshelf":"./models/bookshelf.glb",
+    "closet":"./models/closet.glb",
+    "drill":"./models/drill.glb",
+    "gaming monitor":"./models/gaming_monitor.glb",
+    "globe":"./models/Globe.glb",    
+    "HQL":"./models/HQL.glb",
+    "Japanese Floor Lamp":"./models/Japanese+Floor+Lamp.glb",
+    "lamp":"./models/lamp.glb",
+    "light":"./models/light.glb",
+    "medieval table":"./models/medival_tale.glb",
+    "Mic":"./models/mic.glb",
+    "microwave":"./models/microwave.glb",
+    "pots":"./models/pots.glb",
+    "spanner":"./models/spanner.glb",
+    "speaker":"./models/speaker.glb",
+    "steel bottle":"./models/steel_bottle.glb",
+    "table":"./models/table.glb",
+    "tape measure":"./models/tapeMeasure.glb"
 }
   
