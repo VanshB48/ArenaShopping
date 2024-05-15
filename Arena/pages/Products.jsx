@@ -37,33 +37,12 @@ export default function Products() {
   };
 
   const handleStartAR = () => {
-    const arWindow = window.open('', '_blank');
-    const selectedModelUrl = `/public${Models[model].replace(/^\.\//, '')}`;
-    const arHTML = `
-      <!DOCTYPE html>
-      <html lang="en">
-        <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <link rel="icon" href="data:,">
-          <title>Product</title>
-        </head>
-        <script type="module" src="https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
-        <style>
-          model-viewer {
-            width: 100%;
-            height: 100%;
-          }
-        </style>
-        <body style="margin:0px;overflow:hidden;">
-          <model-viewer src="${selectedModelUrl}" ar ></model-viewer>
-        </body>
-      </html>
-    `;
-    arWindow.document.write(arHTML);
-};
-
-  
+    console.log('Selected Model:', model);
+    const selectedModelUrl = Models[model];
+    console.log('Selected Model URL:', selectedModelUrl);
+    const arWindow = window.open('http://localhost:5000/', '_blank');
+    arWindow.postMessage({ modelUrl: selectedModelUrl }, 'http://localhost:5000');
+  };
 
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
@@ -97,7 +76,7 @@ export default function Products() {
         }}
         onClick={handleStartAR}
       >
-        Start AR
+        Start AR for {model}
       </button>
       <div style={{ width: '100%', height: 'calc(100% - 60px)', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <Canvas style={{ width: '100%', height: '100%' }} camera={{ position: [0, 0, 5], fov: 50, near: 0.1, far: 1000 }}>
