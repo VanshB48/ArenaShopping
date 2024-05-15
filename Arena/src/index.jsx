@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './styles.css';
 import ShoeCustomizer from '../pages/ShoeCustomizer';
 import Products from '../pages/Products';
+import VR from '../pages/vr'; // Import VR component
 
 const Root = () => {
   const [showApp, setShowApp] = useState(false);
@@ -20,6 +21,10 @@ const Root = () => {
               <button className="app-button" onClick={() => setShowApp('products')}>
                 Products
               </button>
+              {/* Button to display VR component */}
+              <button className="app-button" onClick={() => setShowApp('vr')}>
+                VR
+              </button>
             </div>
           )}
           {showApp === 'products' && (
@@ -30,6 +35,11 @@ const Root = () => {
           {showApp === true && (
             <div className="app-content">
               <ShoeCustomizer />
+            </div>
+          )}
+          {showApp === 'vr' && (
+            <div className="app-content">
+              <VR />
             </div>
           )}
         </div>
