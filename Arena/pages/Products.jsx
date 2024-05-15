@@ -38,7 +38,7 @@ export default function Products() {
 
   const handleStartAR = () => {
     const arWindow = window.open('', '_blank');
-    const selectedModelUrl = Models[model];
+    const selectedModelUrl = `/public${Models[model].replace(/^\.\//, '')}`;
     const arHTML = `
       <!DOCTYPE html>
       <html lang="en">
@@ -61,7 +61,9 @@ export default function Products() {
       </html>
     `;
     arWindow.document.write(arHTML);
-  };
+};
+
+  
 
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
